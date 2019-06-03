@@ -1,4 +1,4 @@
-param (
+Param (
     [string]$file = "_",
     [string]$cfg = "_"
 )
@@ -22,9 +22,6 @@ else
 
 foreach ($Result in $FullResult)
 {
-    Write-Host '::', $Result
-
-
     $Line       =   $Result.Line ;
     $Message    =   $Result.Message ;
     $RuleName   =   $Result.RuleName ;
@@ -35,10 +32,10 @@ foreach ($Result in $FullResult)
 
     if ($Extent)
     {
-        Write-Host 'Line:$Line RuleName:$RuleName Severity:$Severity Extent:$Extent Message:$Message $Suggestion'
+        Write-Host "Line:$Line RuleName:$RuleName Severity:$Severity Extent:$Extent Message:$Message $Suggestion"
     }
     else
     {
-        Write-Host 'Line:$Line RuleName:$RuleName Severity:$Severity Column:$Column Message:$Message $Suggestion'
+        Write-Host "Line:$Line RuleName:$RuleName Severity:$Severity Column:$Column Message:$Message $Suggestion"
     }
 }
